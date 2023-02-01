@@ -17,17 +17,15 @@
             <tr>
                 <td>{{ produto.id }}</td>
                 <td>{{ produto.nome }}</td>
-                     <!-- intcomma: função do humanize para virgula e ponto  -->
+                <!-- intcomma: função do humanize para virgula e ponto  -->
                 <td>R$ {{ produto.preco|intcomma }}</td>
-                <td>{{ produto.acao }}</td>
-                <td>
-                    <a class="btn btn-warning" href="#">Editar</a>
-                    <a class="btn btn-danger" href="#">Deletar</a>
+                <td>{{ produto.acao }}
+                    <a class="btn btn-warning" href="{% url 'upd_produto' produto.pk %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'del_produto' produto.pk %}">Deletar</a>
                 </td>
-                
             </tr>
             {% endfor %}
         </tbody>
     </table>
-{% endblock %}
+    {% endblock %}
 </div>
